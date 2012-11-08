@@ -1,13 +1,21 @@
 <!-- %Tag(FULLTEXT)% -->
 <?xml version="1.0"?>
 <package>
+  <!-- %Tag(NAME)% -->
   <name>foo</name>
+  <!-- %EndTag(NAME)% -->
+  <!-- %Tag(VERSION)% -->
   <version>0.0.0</version>
+  <!-- %EndTag(VERSION)% -->
+  <!-- %Tag(DESC)% -->
   <description>The foo package</description>
+  <!-- %EndTag(DESC)% -->
 
+  <!-- %Tag(MAINTAINER)% -->
   <!-- multiple maintainer tags allowed, one name per tag-->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
   <maintainer email="william@todo.todo">william</maintainer>
+  <!-- %EndTag(MAINTAINER)% -->
 
   <!-- Commonly used license strings:
   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3-->
