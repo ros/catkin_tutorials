@@ -3,13 +3,11 @@ cmake_minimum_required(VERSION 2.8.3)
 project(beginner_tutorials)
 
 # Load catkin and all dependencies required for this package
-find_package(catkin REQUIRED COMPONENTS std_msgs rospy roscpp)
+find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs)
 
-catkin_package(
-#  LIBRARIES ${PROJECT_NAME}
-#  INCLUDE_DIRS include
-#  DEPENDS
-)
+## System dependencies, Boost as an example, can be found like this
+## usage examples below
+# find_package(Boost REQUIRED COMPONENTS system)
 
 ## uncomment if the package has a setup.py
 # catkin_python_setup()
@@ -32,17 +30,21 @@ catkin_package(
 
 ## Uncomment this if you have declared any messages or services
 ## and specify dependencies if any
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs)
+# generate_messages(DEPENDENCIES std_msgs)
 
-## System dependencies, Boost as an example, can be found like this
-## usage examples below
-# find_package(Boost REQUIRED COMPONENTS system)
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES ${PROJECT_NAME}
+#  CATKIN_DEPENDS catkin-pkg1 catkin-pkg2
+#  DEPENDS 3rd-party-package Boost
+)
+
+## Specify additional locations of header files
+# include_directories(include ${catkin_INCLUDE_DIRS})
 
 ## Use this to declare libraries that this package creates
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/main.cpp
+#   src/${PROJECT_NAME}/library.cpp
 # )
 
 ## Use this to declare executables that this package creates
@@ -51,12 +53,9 @@ catkin_package(
 ## Use this to e.g. make your executables depend on your libraries
 # add_dependencies(${PROJECT_NAME}_node ${PROJECT_NAME})
 
-## Specify additional locations of header files
-# include_directories(include)
-
 ## specify what c++ libraries your c++ executable should be linked against
 # target_link_libraries(${PROJECT_NAME}_node
-#   ${Boost_LIBRARIES}
+#   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 # )
 
 ## Use this to declare executable scripts (Python etc.)
@@ -85,7 +84,7 @@ catkin_package(
 ## Use this for c++ gtest unit tests
 # catkin_add_gtest(${PROJECT_NAME}-test test/mytest)
 # if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test_version)
+#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME}_node)
 # endif()
 
 ## Use this to declare python unit test folders
