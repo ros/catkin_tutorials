@@ -1,3 +1,4 @@
+# %Tag(FULLTEXT)%
 cmake_minimum_required(VERSION 2.8.3)
 project(beginner_tutorials)
 
@@ -89,3 +90,5 @@ catkin_package(
 
 ## Use this to declare python unit test folders
 # catkin_add_nosetests(test)
+
+# %EndTag(FULLTEXT)%
