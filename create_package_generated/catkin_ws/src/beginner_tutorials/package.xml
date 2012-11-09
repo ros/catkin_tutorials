@@ -1,0 +1,57 @@
+<!-- %Tag(FULLTEXT)% -->
+<?xml version="1.0"?>
+<package>
+  <!-- %Tag(NAME)% -->
+  <name>beginner_tutorials</name>
+  <!-- %EndTag(NAME)% -->
+  <!-- %Tag(VERSION)% -->
+  <version>0.0.0</version>
+  <!-- %EndTag(VERSION)% -->
+  <!-- %Tag(DESC)% -->
+  <description>The beginner_tutorials package</description>
+  <!-- %EndTag(DESC)% -->
+
+  <!-- %Tag(MAINTAINER)% -->
+  <!-- multiple maintainer tags allowed, one name per tag-->
+  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+  <maintainer email="user@todo.todo">user</maintainer>
+  <!-- %EndTag(MAINTAINER)% -->
+
+  <!-- %Tag(LICENSE)% -->
+  <!-- Commonly used license strings:
+  BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3-->
+  <license>TODO</license>
+  <!-- %EndTag(LICENSE)% -->
+
+  <!-- %Tag(URLS)% -->
+  <!-- url type could be one of website, bugtracker or repository -->
+  <!-- <url type="website">http://wiki.ros.org/foo</url> -->
+  <!-- %EndTag(URLS)% -->
+
+  <!-- %Tag(AUTHORS)% -->
+  <!-- multiple authors tags allowed, one name per tag-->
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <!-- %EndTag(AUTHORS)% -->
+
+  <!-- %Tag(DEPS)% -->
+  <!--Any system dependency or dependency to catkin packages. Examples:-->
+  <!--<build_depend>genmsg</build_depend> for libraries for compiling-->
+  <!--<buildtool_depend>cmake</buildtool_depend> for build tools-->
+  <!--<run_depend>python-yaml</run_depend> for packages used at runtime-->
+  <!--<test_depend>gtest</test_depend> for packages needed for testing-->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>roscpp</build_depend>
+  <!-- %EndTag(DEPS)% -->
+
+  <!-- %Tag(EXPORT)% -->
+  <export>
+    <!-- This section contains any information that other tools require-->
+    <!-- <architecture_independent/> -->
+    <!-- <metapackage/> -->
+
+  </export>
+  <!-- %EndTag(EXPORT)% -->
+</package>
+<!-- %EndTag(FULLTEXT)% -->
