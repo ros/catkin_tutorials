@@ -6,29 +6,13 @@ project(beginner_tutorials)
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg)
 
 ## Declare ROS messages and services
+add_message_files(DIRECTORY msg FILES Num.msg)
+add_service_files(DIRECTORY srv FILES AddTwoInts.srv)
 
-## Generate messages in the 'msg' folder
-add_message_files(
-  DIRECTORY msg
-  FILES
-  Num.msg
-)
+## Generate added messages and services
+generate_messages(DEPENDENCIES std_msgs)
 
-## Generate services in the 'srv' folder
-add_service_files(
-  DIRECTORY srv
-  FILES
-  AddTwoInts.srv
-)
-
-## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
-
-## Declare things to be passed to other projects
+## Declare a catkin package
 catkin_package()
-
 
 # %EndTag(FULLTEXT)%
