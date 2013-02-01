@@ -2,23 +2,27 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(beginner_tutorials)
 
-## Find catkin and system dependencies
+cmake_minimum_required(VERSION 2.8.3)
+project(beginner_tutorials)
 
-## Find catkin and any catkin packages on which
-## this package depends at build time
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-## Uncomment if the package has a setup.py
+## Uncomment this if the package has a setup.py. This macro ensures
+## modules and scripts declared therein get installed
 # catkin_python_setup()
 
-## Declare ROS messages and services
+#######################################
+## Declare ROS messages and services ##
+#######################################
 
 ## Generate messages in the 'msg' folder
 # add_message_files(
-#   DIRECTORY msg
 #   FILES
 #   Message1.msg
 #   Message2.msg
@@ -26,7 +30,6 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
-#   DIRECTORY srv
 #   FILES
 #   Service1.srv
 #   Service2.srv
@@ -35,44 +38,61 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-# #  std_msgs  # Or other packages containing msgs
+#   std_msgs
 # )
 
-## Declare things to be passed to other projects
+###################################################
+## Declare things to be passed to other projects ##
+###################################################
+
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES ${PROJECT_NAME}
-#  CATKIN_DEPENDS # catkin-pkg1 catkin-pkg2
-#  DEPENDS Boost # other-3rd-party-libraries
+   INCLUDE_DIRS include
+#  LIBRARIES beginner_tutorials
+#  CATKIN_DEPENDS roscpp rospy std_msgs
+#  DEPENDS system_lib
 )
 
+###########
+## Build ##
+###########
+
 ## Specify additional locations of header files
-# include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+include_directories(include
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a cpp library
-# add_library(${PROJECT_NAME}
+# add_library(beginner_tutorials
 #   src/${PROJECT_NAME}/beginner_tutorials.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(${PROJECT_NAME}_node src/beginner_tutorials_node.cpp)
+# add_executable(beginner_tutorials_node src/beginner_tutorials_node.cpp)
 
 ## Add dependencies to the executable
-# add_dependencies(${PROJECT_NAME}_node ${PROJECT_NAME})
+# add_dependencies(beginner_tutorials_node ${PROJECT_NAME})
 
-## Specify libraries to link the executable against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
+## Specify libraries to link a library or executable target against
+# target_link_libraries(beginner_tutorials_node
+#   ${catkin_LIBRARIES}
 # )
 
+#############
+## Install ##
+#############
+
 ## Mark executable scripts (Python etc.) for installation
+## not required for python when using catkin_python_setup()
 # install(PROGRAMS
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
+# install(TARGETS beginner_tutorials beginner_tutorials_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -92,13 +112,17 @@ catkin_package(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
+#############
+## Testing ##
+#############
+
 ## Add gtest based cpp test target and link libraries
 # catkin_add_gtest(${PROJECT_NAME}-test test/test_beginner_tutorials.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
-## Add any nosetest based python tests
+## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
 
