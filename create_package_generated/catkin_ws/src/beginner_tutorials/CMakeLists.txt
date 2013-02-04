@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and scripts declared therein get installed
+## See http://ros.org/doc/groovy/api/catkin/html/user_guide/setup_dot_py.html
 # catkin_python_setup()
 
 #######################################
@@ -57,6 +58,7 @@ catkin_package(
 ###########
 
 ## Specify additional locations of header files
+## Your package locations should be listed before other locations
 include_directories(include
   ${catkin_INCLUDE_DIRS}
 )
@@ -81,8 +83,11 @@ include_directories(include
 ## Install ##
 #############
 
+# all install targets should use catkin DESTINATION variables
+# See http://ros.org/doc/groovy/api/catkin/html/adv_user_guide/variables.html
+
 ## Mark executable scripts (Python etc.) for installation
-## not required for python when using catkin_python_setup()
+## in contrast to setup.py, you can choose the destination
 # install(PROGRAMS
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
