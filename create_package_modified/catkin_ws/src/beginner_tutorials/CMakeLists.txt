@@ -16,5 +16,5 @@ generate_messages(DEPENDENCIES std_msgs)
 catkin_package()
 
 ## Include headers of found catkin packages
-include_directories(include ${catkin_INCLUDE_DIRS})
+include_directories(${catkin_INCLUDE_DIRS})
 # %EndTag(FULLTEXT)%
