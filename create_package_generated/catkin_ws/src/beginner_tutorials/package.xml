@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- %Tag(FULLTEXT,-1)% -->
-<package>
+<package format="2">
   <!-- %Tag(NAME)% -->
   <name>beginner_tutorials</name>
   <!-- %EndTag(NAME)% -->
@@ -47,8 +47,8 @@
   <!--   <build_depend>genmsg</build_depend> -->
   <!-- Use buildtool_depend for build tool packages: -->
   <!--   <buildtool_depend>catkin</buildtool_depend> -->
-  <!-- Use run_depend for packages you need at runtime: -->
-  <!--   <run_depend>python-yaml</run_depend> -->
+  <!-- Use exec_depend for packages you need at runtime: -->
+  <!--   <exec_depend>python-yaml</exec_depend> -->
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
