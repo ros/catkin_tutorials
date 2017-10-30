@@ -13,11 +13,17 @@ add_service_files(FILES AddTwoInts.srv)
 generate_messages(DEPENDENCIES std_msgs)
 
 ## Declare a catkin package
-catkin_package()
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES beginner_tutorials
+  CATKIN_DEPENDS message_runtime roscpp rospy std_msgs
+  DEPENDS system_lib
+)
+
+## Specify additional locations of header files
+include_directories(${catkin_INCLUDE_DIRS})
 
 ## Build talker and listener
-include_directories(include ${catkin_INCLUDE_DIRS})
-
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 add_dependencies(talker beginner_tutorials_generate_messages_cpp)
